@@ -87,10 +87,26 @@ end
 # words).
 
 def substrings(string)
+  strings = []
+  i = 0
+  while i < string.length
+    n = i
+    if n < string.length
+      sub = string[i..n]
+      if strings.include?(sub) == false
+        strings << sub
+      end
+      n += 1
+    end
+    i += 1
+  end
+  return strings
 end
 
 def subwords(word, dictionary)
+
 end
+
 
 # ### Doubler
 # Write a `doubler` method that takes an array of integers and returns an
