@@ -91,7 +91,7 @@ def substrings(string)
   i = 0
   while i < string.length
     n = i
-    if n < string.length
+    while n < string.length
       sub = string[i..n]
       if strings.include?(sub) == false
         strings << sub
@@ -104,7 +104,11 @@ def substrings(string)
 end
 
 def subwords(word, dictionary)
-
+  words = []
+  substrings(word).each do |string| 
+    dictionary.include?(string) ? words << string : nil 
+  end
+words
 end
 
 
