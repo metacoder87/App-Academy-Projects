@@ -180,6 +180,9 @@ class Array
   end
 
   def my_inject(&blk)
+    acu = self.first
+    self.drop(1).my_each { |ele| acu = blk.call acu, ele }
+    acu
   end
 end
 
