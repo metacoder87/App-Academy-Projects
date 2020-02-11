@@ -174,6 +174,9 @@ class Array
   end
 
   def my_select(&prc)
+    arr = []
+    my_each { |ele| arr << ele if prc.call(ele) }
+    return arr
   end
 
   def my_inject(&blk)
