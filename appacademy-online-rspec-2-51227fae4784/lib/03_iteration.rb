@@ -144,6 +144,12 @@ end
 
 class Array
   def my_each(&prc)
+    i = 0
+    while i < self.count
+      prc.call self[i]
+      i += 1
+    end
+    self
   end
 end
 
