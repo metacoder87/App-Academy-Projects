@@ -54,22 +54,21 @@ end
 
 class Array
   def bubble_sort!(&prc)
-	loop do
-	finished = true
-	(self.length - 1).times do |i|
-		if prc.nil? ? self[i] > self[i+1] : prc.call(self[i], self[i+1]) == 1
-			self[i], self[i+1] = self[i+1], self[i]
-		finished = false
-		end
+    loop do
+      finished = true
+        (self.length - 1).times do |i|
+	 if prc.nil? ? self[i] > self[i+1] : prc.call(self[i], self[i+1]) == 1
+	 self[i], self[i+1] = self[i+1], self[i]
+           finished = false
 	end
+     end
 	break if finished
     end
     return self
   end
 
   def bubble_sort(&prc)
-	copy = self.dup
-	copy.bubble_sort!(&prc)
+     self.dup.bubble_sort!(&prc)
   end
 end
 
@@ -169,6 +168,9 @@ end
 
 class Array
   def my_map(&prc)
+    arr = []
+    my_each { |ele| arr << prc.call(ele) }
+    return arr
   end
 
   def my_select(&prc)
