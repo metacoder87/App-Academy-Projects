@@ -196,4 +196,5 @@ end
 # ```
 
 def concatenate(strings)
+  strings.inject(:+)
 end
