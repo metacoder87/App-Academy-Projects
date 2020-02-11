@@ -54,22 +54,22 @@ end
 
 class Array
   def bubble_sort!(&prc)
-	  loop do
-	  	finished = true
-		(self.length - 1).times do |i|
-			if prc.nil? ? self[i] > self[i+1] : prc.call(self[i], self[i+1]) == 1
-				self[i], self[i+1] = self[i+1], self[i]
-				finished = false
-			end
+	loop do
+	finished = true
+	(self.length - 1).times do |i|
+		if prc.nil? ? self[i] > self[i+1] : prc.call(self[i], self[i+1]) == 1
+			self[i], self[i+1] = self[i+1], self[i]
+		finished = false
 		end
-		  break if finished
+	end
+	break if finished
     end
     return self
   end
 
   def bubble_sort(&prc)
-	  copy = self.dup
-	  copy.bubble_sort!(&prc)
+	copy = self.dup
+	copy.bubble_sort!(&prc)
   end
 end
 
@@ -117,6 +117,7 @@ end
 # array with the original elements multiplied by two.
 
 def doubler(array)
+  array.map { |ele| ele * 2 }
 end
 
 # ### My Each
