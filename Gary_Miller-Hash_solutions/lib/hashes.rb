@@ -5,7 +5,7 @@
 def word_lengths(str)
     hsh = Hash.new
     str.split(" ").each { |word| hsh[word] = word.length }
-    hsh
+    hsh 
 end
 
 # Define a method that, given a hash with integers as values, returns the key
