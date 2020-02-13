@@ -94,7 +94,15 @@ end
 # can_tweak_sign("We're having a yellow ferret sale for a good cause over at the
 # pet shop!", "Leopard ferrets forever yo") => true
 def can_tweak_sign?(normal_sign, vandalized_sign)
+    van_hsh = character_count(vandalized_sign)
+    norm_hsh = character_count(normal_sign)
+    do_it = false
+    van_hsh.each_key { |char| norm_hsh.has_key?(char) ? do_it = true : false }
+    do_it
 end
 
 def character_count(str)
+    chars = Hash.new()
+    str.split("").each { |char| chars.include?(char) ? chars[char] += 1 : chars[char.downcase] = 1 }
+    chars
 end
