@@ -38,8 +38,10 @@ end
 # Define a method that, given an array, returns that array without duplicates.
 # Use a hash! Don't use the uniq method.
 def my_uniq(arr)
+    hash = Hash.new()
+    arr.each { |num| hash[num] = arr.count(num) }
+    hash.keys
 end
-
 # Define a method that, given an array of numbers, returns a hash with "even"
 # and "odd" as keys and the frequency of each parity as values.
 def evens_and_odds(numbers)
