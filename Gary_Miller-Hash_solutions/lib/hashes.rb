@@ -11,6 +11,7 @@ end
 # Define a method that, given a hash with integers as values, returns the key
 # with the largest value.
 def greatest_key_by_val(hash)
+    hash.key(hash.values.max)
 end
 
 # Define a method that accepts two hashes as arguments: an older inventory and a
