@@ -54,6 +54,9 @@ end
 # not worry about ordering in the case of a tie. Assume all letters are 
 # lower case.
 def most_common_vowel(string)
+    vowels = { "a" => 0, "e" => 0, "i" => 0, "o" => 0, "u" => 0 }
+    string.each_char { |char| vowels.include?(char) ? vowels[char] += 1 : nil }
+    vowels.key(vowels.values.max)
 end
 
 # HARD
