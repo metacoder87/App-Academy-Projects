@@ -96,10 +96,9 @@ end
 def can_tweak_sign?(normal_sign, vandalized_sign)
     van_hsh = character_count(vandalized_sign)
     norm_hsh = character_count(normal_sign)
-    do_it = false
-    van_hsh.each_key { |char| norm_hsh.has_key?(char) ? do_it = true : false }
-    do_it
+  van_hsh.all? { |key, val| norm_hsh[key] >= val }
 end
+
 
 def character_count(str)
     chars = Hash.new()
