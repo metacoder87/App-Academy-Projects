@@ -69,6 +69,9 @@ end
 # fall_and_winter_birthdays(students_with_birthdays) => [ ["Bertie", "Dottie"],
 # ["Bertie", "Warren"], ["Dottie", "Warren"] ]
 def fall_and_winter_birthdays(students)
+    fw = []
+    students.values.each { |num| num >= 7 && num <= 12 ? fw << students.key(num) : nil }
+    fw.combination(2).to_a
 end
 
 # Define a method that, given an array of specimens, returns the biodiversity
