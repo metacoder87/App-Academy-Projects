@@ -28,6 +28,12 @@ end
 # Define a method that, given a word, returns a hash with the letters in the
 # word as keys and the frequencies of the letters as values.
 def letter_counts(word)
+    arr = []
+    word.split('').each do |char|
+        brr = []
+            brr << char && brr << word.count(char) && arr << brr
+    end
+    arr.uniq.to_h
 end
 
 # MEDIUM
