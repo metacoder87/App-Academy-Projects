@@ -45,6 +45,9 @@ end
 # Define a method that, given an array of numbers, returns a hash with "even"
 # and "odd" as keys and the frequency of each parity as values.
 def evens_and_odds(numbers)
+    hash = { :even => 0, :odd => 0 }
+    numbers.each { |num| num % 2 == 0 ? hash[:even] += 1 : hash[:odd] += 1 }
+    hash
 end
 
 # Define a method that, given a string, returns the most common vowel. Do
