@@ -80,6 +80,12 @@ end
 # "cat", "cat"]) => 1 biodiversity_index(["cat", "leopard-spotted ferret",
 # "dog"]) => 9
 def biodiversity_index(specimens)
+    spec_count = Hash.new()
+    specimens.each { |ani| spec_count.include?(ani) ? spec_count[ani] += 1 : spec_count[ani] = 1 }
+    large_pop = spec_count.values.max
+    small_pop = spec_count.values.min
+    num_spec = spec_count.length
+    return num_spec * num_spec * small_pop / large_pop
 end
 
 # Define a method that, given the string of a respectable business sign, returns
