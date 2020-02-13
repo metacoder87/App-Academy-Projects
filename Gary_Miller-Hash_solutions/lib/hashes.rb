@@ -22,6 +22,7 @@ end
 # update_inventory(march, april) => {rubies: 10, emeralds: 27, diamonds: 2,
 # moonstones: 5}
 def update_inventory(older, newer)
+   older.update(newer)
 end
 
 # Define a method that, given a word, returns a hash with the letters in the
