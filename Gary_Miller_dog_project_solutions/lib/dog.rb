@@ -50,6 +50,10 @@ class Dog
     def favorite_foods=(string)
         @favorite_foods = string
     end
+    
+    def favorite_food?(string)
+        @favorite_foods.include?(string)
+    end
 
 end
 
