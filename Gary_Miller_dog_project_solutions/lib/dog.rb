@@ -52,7 +52,8 @@ class Dog
     end
     
     def favorite_food?(string)
-        @favorite_foods.include?(string)
+        str = string.capitalize
+        @favorite_foods.include?(str)
     end
 
 end
