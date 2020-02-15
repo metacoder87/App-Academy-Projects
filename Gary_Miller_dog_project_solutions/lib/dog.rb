@@ -32,7 +32,11 @@ class Dog
     end
 
     def bark
-        @bark
+        if @age > 3 
+            @bark.upcase
+        elsif @age <= 3 
+            @bark.downcase
+        end
     end
 
     def bark=(string)
