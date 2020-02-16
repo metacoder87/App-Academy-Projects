@@ -7,6 +7,10 @@ class Bootcamp
     @students = []
     @grades = Hash.new() { |hash, k| hash[k] = [] } 
   end
+  
+  def hire(str)
+    @teachers << str
+  end
 
   def name
     @name
