@@ -20,6 +20,10 @@ class Bootcamp
         false
     end
   end
+  
+  def enrolled?(str)
+    @students.include?(str)
+  end
 
   def name
     @name
