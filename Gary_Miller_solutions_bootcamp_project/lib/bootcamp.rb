@@ -11,6 +11,15 @@ class Bootcamp
   def hire(str)
     @teachers << str
   end
+  
+  def enroll(str)
+    if @students.length < @student_capacity
+    @students << str
+        true
+    else
+        false
+    end
+  end
 
   def name
     @name
