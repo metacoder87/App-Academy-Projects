@@ -60,5 +60,16 @@ class Bootcamp
     else false
     end
   end
+  
+  def num_grades(str)
+    @grades[str].length
+  end
+  
+  def average_grade(str)
+    if @grades.include?(str)
+       @grades[str].inject(:+) / @grades[str].length
+    else nil
+    end
+  end
 
 end
