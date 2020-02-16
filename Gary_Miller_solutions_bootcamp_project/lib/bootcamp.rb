@@ -48,5 +48,9 @@ class Bootcamp
   def grades
     @grades
   end
+  
+  def student_to_teacher_ratio
+    (@students.length / @teachers.length)
+  end
 
 end
