@@ -7,23 +7,6 @@ class Bootcamp
     @students = []
     @grades = Hash.new() { |hash, k| hash[k] = [] } 
   end
-  
-  def hire(str)
-    @teachers << str
-  end
-  
-  def enroll(str)
-    if @students.length < @student_capacity
-    @students << str
-        true
-    else
-        false
-    end
-  end
-  
-  def enrolled?(str)
-    @students.include?(str)
-  end
 
   def name
     @name
@@ -40,17 +23,42 @@ class Bootcamp
   def teachers
     @teachers
   end
+  
+  def hire(str)
+    @teachers << str
+  end
 
   def students
     @students
+  end
+  
+  def enrolled?(str)
+    @students.include?(str)
+  end
+ 
+  def enroll(str)
+    if @students.length < @student_capacity
+    @students << str
+        true
+    else
+        false
+    end
+  end
+  
+  def student_to_teacher_ratio
+    (@students.length / @teachers.length)
   end
 
   def grades
     @grades
   end
   
-  def student_to_teacher_ratio
-    (@students.length / @teachers.length)
+  def add_grade(str, i)
+    if @students.include?(str)
+        @grades[str] << i
+        true
+    else false
+    end
   end
 
 end
