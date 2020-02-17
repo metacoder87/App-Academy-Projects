@@ -31,4 +31,12 @@ class Array
   hash
   end
   
+  def my_count(ele)
+    if self.include?(ele)
+    arr = self.select { |char| ele == char } 
+    arr.length
+    else 0
+    end
+  end
+  
 end
