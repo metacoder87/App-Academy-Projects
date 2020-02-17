@@ -25,4 +25,10 @@ class Array
     end
   end
   
+  def counts
+  hash = Hash.new()
+    self.each { |ele|  hash[ele] = self.count(ele) }
+  hash
+  end
+  
 end
