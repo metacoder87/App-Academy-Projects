@@ -15,4 +15,14 @@ class Array
     end
   end
   
+  def median
+    if self.length.odd?
+        self.sort[ self.length / 2 ]
+    elsif self.length == 0 
+        nil
+    else arr = [self.sort[ self.length / 2 ], self.sort[ self.length.to_f / 2 - 1 ]]
+        arr.average
+    end
+  end
+  
 end
