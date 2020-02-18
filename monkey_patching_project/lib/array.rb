@@ -47,4 +47,8 @@ class Array
     self.counts.keys
   end
   
+  def my_transpose
+    self.first.zip(*self[1..-1])
+  end 
+  
 end
