@@ -39,4 +39,8 @@ class Array
     end
   end
   
+  def my_index(ele)
+      self.find_index(ele)
+  end
+  
 end
