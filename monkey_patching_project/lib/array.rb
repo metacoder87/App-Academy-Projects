@@ -43,4 +43,8 @@ class Array
       self.find_index(ele)
   end
   
+  def my_uniq
+    self.counts.keys
+  end
+  
 end
