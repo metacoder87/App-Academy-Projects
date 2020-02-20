@@ -23,5 +23,12 @@ class Hangman
   def remaining_incorrect_guesses
     @remaining_incorrect_guesses
   end
+  
+  def already_attempted?(char)
+    if @attempted_chars.include?(char)
+      true
+    else false
+    end
+  end
 
 end
