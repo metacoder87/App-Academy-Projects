@@ -30,5 +30,11 @@ class Hangman
     else false
     end
   end
+  
+  def get_matching_indices(char)
+    arr = []
+    @secret_word.each_char.with_index { |ele, i| char == ele ? arr << i : arr }
+    arr
+  end
 
 end
