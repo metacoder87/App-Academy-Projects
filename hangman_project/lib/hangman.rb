@@ -41,5 +41,23 @@ class Hangman
     arr.each { |num| @guess_word[num] = char }
     @guess_word
   end
+  
+  def try_guess(char)
+
+    mtch = get_matching_indices (char)
+
+    if @secret_word.include?(char)
+        fill_indices(char, mtch)
+    else @remaining_incorrect_guesses -= 1
+    end
+
+    if already_attempted?(char)
+        print 'that has already been attempted'
+          return false
+    else @attempted_chars << char 
+          return true
+    end
+    
+  end
 
 end
