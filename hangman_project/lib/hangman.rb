@@ -65,5 +65,13 @@ class Hangman
     guess = gets.chomp
     return try_guess(guess)
   end
+  
+  def win?
+    if @guess_word.join('') == @secret_word
+      print 'WIN'
+        return true
+    else false
+    end
+  end
 
 end
