@@ -9,4 +9,10 @@ class Hotel
     vacancies.each { |key, val| @rooms[key] = Room.new(val) }
   end
   
+  def name
+    arr = []
+    @name.split(" ").each { |word| arr << word.capitalize }
+    arr.join(" ")
+  end
+  
 end
