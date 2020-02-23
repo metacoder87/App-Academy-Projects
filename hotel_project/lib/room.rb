@@ -4,5 +4,13 @@ class Room
         @capacity = capacity
         @occupants = []
     end
+    
+    def capacity
+        @capacity
+    end
+
+    def occupants
+        @occupants
+    end
 
 end
