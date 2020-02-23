@@ -15,4 +15,12 @@ class Hotel
     arr.join(" ")
   end
   
+  def rooms
+    @rooms
+  end
+
+  def room_exists?(name)
+    @rooms.include?(name)
+  end
+  
 end
