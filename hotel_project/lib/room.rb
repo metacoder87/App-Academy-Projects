@@ -19,5 +19,9 @@ class Room
         else false
         end
     end
+    
+    def available_space
+        @capacity - @occupants.length
+    end
 
 end
