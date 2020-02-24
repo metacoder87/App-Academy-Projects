@@ -8,4 +8,8 @@ class Employee
         @earnings = 0
     end
   
+    def pay(num)
+        @earnings += num
+    end
+  
 end
