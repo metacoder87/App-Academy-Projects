@@ -33,4 +33,8 @@ class Hotel
     end
   end
   
+  def has_vacancy?
+    @rooms.values.any? { |room| room.available_space > 0 }
+  end
+  
 end
