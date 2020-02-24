@@ -37,4 +37,10 @@ class Hotel
     @rooms.values.any? { |room| room.available_space > 0 }
   end
   
+  def list_rooms
+    @rooms.each do |name, room| 
+        puts "#{name} #{room.available_space}"
+    end
+  end
+  
 end
