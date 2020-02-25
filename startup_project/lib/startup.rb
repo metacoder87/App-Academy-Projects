@@ -15,4 +15,11 @@ class Startup
         @salaries.include?(title)
     end
   
+    def >(startup)
+       if self.funding > startup.funding
+            true
+       else false
+       end
+    end
+  
 end
