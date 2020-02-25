@@ -29,8 +29,16 @@ class Startup
         end
     end
   
-  def size
+    def size
         @employees.length
+    end
+  
+    def pay_employee(employee)
+        if @funding < @salaries[employee.title]
+            raise 'An error occured'
+        else employee.pay(@salaries[employee.title])
+                @funding -= @salaries[employee.title]
+        end
     end
   
 end
