@@ -11,4 +11,8 @@ class Startup
         @employees = []
     end
   
+    def valid_title?(title)
+        @salaries.include?(title)
+    end
+  
 end
