@@ -29,4 +29,8 @@ class Startup
         end
     end
   
+  def size
+        @employees.length
+    end
+  
 end
