@@ -45,4 +45,10 @@ class Startup
         @employees.each { |employee| pay_employee(employee) }
     end
   
+    def average_salary 
+        total = 0
+        @employees.each { |employee| total += @salaries[employee.title] }
+        total / size
+    end
+  
 end
