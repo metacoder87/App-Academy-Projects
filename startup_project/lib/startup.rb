@@ -41,4 +41,8 @@ class Startup
         end
     end
   
+    def payday
+        @employees.each { |employee| pay_employee(employee) }
+    end
+  
 end
