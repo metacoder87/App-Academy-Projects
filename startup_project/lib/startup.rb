@@ -56,4 +56,12 @@ class Startup
         @funding = 0
     end
   
+    def acquire(startup)
+        @funding += startup.funding
+        sal = startup.salaries.select { |k, v| !@salaries.include?(k) }
+        @salaries.merge!(sal)
+        startup.employees.each { |employee| @employees << employee }
+        startup.close
+    end
+  
 end
