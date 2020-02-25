@@ -51,4 +51,9 @@ class Startup
         total / size
     end
   
+    def close
+        @employees = []
+        @funding = 0
+    end
+  
 end
