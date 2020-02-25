@@ -22,4 +22,11 @@ class Startup
        end
     end
   
+    def hire(employee_name, title)
+        if @salaries.include?(title)
+            @employees << Employee.new(employee_name, title)
+        else raise 'An error occured' 
+        end
+    end
+  
 end
