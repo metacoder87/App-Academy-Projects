@@ -32,5 +32,9 @@ class Code
   def self.from_string(str)
     Code.new(str.split(''))
   end
+  
+  def [](i)
+    @pegs[i]
+  end
 
 end
