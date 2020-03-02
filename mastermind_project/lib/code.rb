@@ -36,5 +36,9 @@ class Code
   def [](i)
     @pegs[i]
   end
+  
+  def length
+    @pegs.length
+  end
 
 end
