@@ -28,5 +28,9 @@ class Code
     end
     Code.new(pegs_arr)
   end
+  
+  def self.from_string(str)
+    Code.new(str.split(''))
+  end
 
 end
