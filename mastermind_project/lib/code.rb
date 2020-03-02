@@ -18,5 +18,15 @@ class Code
     else raise "Error"
     end
   end
+  
+  def self.random(num)
+    pegs_arr = []
+    count = num
+    while count > 0
+      pegs_arr.push(POSSIBLE_PEGS.keys.sample)
+      count -= 1
+    end
+    Code.new(pegs_arr)
+  end
 
 end
