@@ -10,6 +10,8 @@ class Code
     arr.all? { |char| POSSIBLE_PEGS.include?(char.upcase) }
   end
   
+  attr_reader :pegs
+  
   def initialize(pegs)
     if Code.valid_pegs?(pegs)
       @pegs = pegs.map { |peg| peg.upcase }
