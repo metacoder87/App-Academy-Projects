@@ -9,5 +9,12 @@ class Code
   def self.valid_pegs?(arr)
     arr.all? { |char| POSSIBLE_PEGS.include?(char.upcase) }
   end
+  
+  def initialize(pegs)
+    if Code.valid_pegs?(pegs)
+      @pegs = pegs.map { |peg| peg.upcase }
+    else raise "Error"
+    end
+  end
 
 end
