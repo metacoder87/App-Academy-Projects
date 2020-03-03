@@ -48,4 +48,10 @@ class Code
     count
   end
   
+  def num_near_matches(arr)
+    count = 0
+    (0...arr.length).each { |i| @pegs.include?(arr[i]) && arr[i] != self[i] ? count += 1 : nil }
+    count
+  end
+  
 end
