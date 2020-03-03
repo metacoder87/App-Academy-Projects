@@ -54,4 +54,8 @@ class Code
     count
   end
   
+  def ==(arr)
+    self.length == num_exact_matches(arr) && self.length == arr.length
+  end
+  
 end
