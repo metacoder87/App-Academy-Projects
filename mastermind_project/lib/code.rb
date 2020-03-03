@@ -42,4 +42,10 @@ class Code
   
   #Part 2
   
+  def num_exact_matches(arr)
+    count = 0
+    (0...arr.length).each { |i| arr[i] == self[i] ? count += 1 : nil }
+    count
+  end
+  
 end
