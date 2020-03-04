@@ -11,4 +11,11 @@ class Mastermind
         puts "near matches #{ @secret_code.num_near_matches(code) }"
     end
   
+    def ask_user_for_guess
+        print 'Enter a code: '
+        code = Code.from_string(gets.chomp)
+        self.print_matches(code)
+        @secret_code == code
+    end
+  
 end
