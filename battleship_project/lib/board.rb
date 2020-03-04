@@ -17,4 +17,10 @@ class Board
         @grid[row][col] = val
     end
   
+    def num_ships
+        ships = 0
+        @grid.flatten.each { |ele| ele == :S ? ships += 1 : nil }
+        ships
+    end
+  
 end
