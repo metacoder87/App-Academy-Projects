@@ -7,4 +7,9 @@ class Board
         @size = n * n
     end
   
+    def [](pos)
+        row, col = pos
+        @grid[row][col]
+    end
+  
 end
