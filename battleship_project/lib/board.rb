@@ -12,4 +12,9 @@ class Board
         @grid[row][col]
     end
   
+    def []=(pos, val)
+        row, col = pos
+        @grid[row][col] = val
+    end
+  
 end
