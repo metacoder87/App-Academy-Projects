@@ -50,7 +50,7 @@ class Battleship
             @remaining_misses -= 1
         else true
         end
-        puts @remaining_misses
+        puts "Guesses Remaining: #{@remaining_misses}"
     end
 
 end
