@@ -1,6 +1,10 @@
 class Board
   
   attr_reader :size
+  
+    def self.print_grid(grid)
+        grid.each { |row| puts row.join(" ") }
+    end
 
     def initialize(n)
         @grid = Array.new(n) { Array.new(n).fill(:N) }
