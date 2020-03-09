@@ -45,4 +45,8 @@ class Board
         @grid.map { |row| row.map { |ele| ele == :S ? ele = :N : ele } }
     end
   
+    def cheat
+        Board.print_grid(@grid)
+    end
+  
 end
