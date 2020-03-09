@@ -41,5 +41,16 @@ class Battleship
         else false
         end
     end
+  
+    def turn
+        pos = @player.get_move
+        attack = @board.attack(pos)
+        @board.print
+        if attack == false
+            @remaining_misses -= 1
+        else true
+        end
+        puts @remaining_misses
+    end
 
 end
