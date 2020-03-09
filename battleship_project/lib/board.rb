@@ -23,4 +23,14 @@ class Board
         ships
     end
   
+    def attack(pos)
+        if self[pos] == :S
+            self[pos] = :H
+            puts 'you sunk my battleship!'
+            true
+        else self[pos] = :X
+            false
+        end
+    end
+  
 end
