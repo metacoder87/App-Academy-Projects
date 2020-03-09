@@ -14,7 +14,7 @@ class Battleship
     def start_game
         @board.place_random_ships
         puts @board.num_ships
-        puts @board.print
+        @board.print
     end
   
     def lose?
