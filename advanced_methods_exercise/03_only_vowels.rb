@@ -4,10 +4,8 @@
 
 
 def only_vowels?(str)
-    no_cons = true
-    cons = 'bcdfghjklmnpqrstvwxz'
-    str.each_char { |char| cons.include?(char) ? no_cons = false : true } 
-    no_cons
+    vowels = 'aeiou'
+    str.split('').all? { |char| vowels.include?(char) }
 end 
 
 p only_vowels?("aaoeee")  # => true
