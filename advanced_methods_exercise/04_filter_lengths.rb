@@ -4,8 +4,7 @@
 # is passed in, then 5 should be used as the length.
 
 def filter_lengths(str, leng=5)
-    long = str.select { |word| word.length >= leng }
-    long
+    str.select { |word| word.length >= leng }
 end 
 
 
