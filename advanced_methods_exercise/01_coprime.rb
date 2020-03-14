@@ -5,19 +5,9 @@
 
 
 def coprime?(num_1, num_2)
-    common = [] 
-    factors(num_1).each { |ele| factors(num_2).include?(ele) ? common << ele : nil }
-    if common.length == 1 && common.include?(1)
-        true 
-    else false
-    end
+    (2..num_1).none? { |div| num_1 % div == 0 && num_2 % div == 0 }
 end
 
-def factors(num)
-    divs = []
-    (1..num).map { |int| num % int == 0 ? divs << int : nil }
-    divs
-end
 
 p coprime?(25, 12)    # => true
 p coprime?(7, 11)     # => true
