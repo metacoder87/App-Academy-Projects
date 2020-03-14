@@ -4,9 +4,7 @@
 
 
 def adult_in_group?(people)
-    adult = false
-    peeps = people.map { |ele| ele.to_a[-1][1] > 18 ? adult = true : false }
-    adult
+    people.any? { |peep| peep[:age] > 17 }
 end 
 
 
