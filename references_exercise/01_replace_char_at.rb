@@ -7,7 +7,8 @@
 # to be the same before and after calling your method.
 
 def replace_char_at!(str, char, idx)
-
+    str.each_char.with_index { |ch, i| str[idx] = char }
+    str
 end
 
 
