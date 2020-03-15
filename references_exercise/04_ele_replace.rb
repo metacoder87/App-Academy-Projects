@@ -7,7 +7,8 @@
 # to be the same before and after calling your method.
 
 def ele_replace!(array, hash)
-
+    array.map! { |num| hash.include?(num) ? num = hash[num] : num }
+    array
 end
 
 
