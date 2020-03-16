@@ -11,3 +11,15 @@ def hipsterfy(str)
     arr.delete_at(i)
     arr.join('')
 end
+
+def vowel_counts(str)
+    hash = Hash.new()
+    arr = str.downcase.chars
+    arr.each do |char| 
+        if 'aeiou'.include?(char) 
+            hash[char] = arr.count(char)
+        end
+    end
+    hash
+end
+
