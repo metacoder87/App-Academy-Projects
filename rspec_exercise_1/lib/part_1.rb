@@ -8,3 +8,7 @@ end
 def average_array(arr)
     arr.inject(:+) / arr.length.to_f
 end
+
+def repeat(str, num)
+    str * num
+end
