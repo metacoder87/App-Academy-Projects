@@ -16,3 +16,8 @@ end
 def yell(str)
     str.upcase + '!'
 end
+
+def alternating_case(str)
+    alt = str.split(' ').each_with_index { |word, i| i % 2 == 0 ? word.upcase! : word.downcase! }
+    alt.join(' ')
+end
