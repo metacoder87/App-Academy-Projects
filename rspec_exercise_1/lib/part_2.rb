@@ -23,3 +23,16 @@ def vowel_counts(str)
     hash
 end
 
+def caesar_cipher(str, n)
+    alph = 'abcdefghijklmnopqrstuvwxyz'
+    alpha_arr = alph.chars
+    arr = str.chars.map do |char|
+        if alph.include?(char)
+            i = alpha_arr.index(char) 
+            new_alpha = alpha_arr.rotate(n)
+            char = new_alpha[i]
+        else char
+        end
+    end
+    arr.join('')
+end
