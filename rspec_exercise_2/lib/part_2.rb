@@ -24,3 +24,7 @@ def substrings(str)
     end
     subs
 end
+
+def palindrome_substrings(str)
+    substrings(str).keep_if { |sub| palindrome?(sub) && sub.length > 2 }
+end
