@@ -9,3 +9,18 @@ def palindrome?(str)
     else false
     end
 end
+
+def substrings(str)
+#    count = 1
+    subs = []
+#    while count <= str.length
+#        subs << str.split('').first(count).join('')
+#        count += 1
+#        end
+    (0...str.length).each do |start_i|
+        (start_i...str.length).each do |end_i|
+            subs << str[start_i..end_i]
+        end
+    end
+    subs
+end
