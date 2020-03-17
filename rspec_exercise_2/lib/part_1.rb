@@ -12,3 +12,14 @@ end
 def merge(hash_1, hash_2)
     hash_1.merge(hash_2)
 end
+
+def censor(str, arr)
+    upd = arr.map { |word| word.upcase }
+    words = str.split(" ")
+    words.each do |word| 
+        if upd.include?(word.upcase)    
+            word.split('').each_with_index { |char, i| 'AEIOUaeiou'.include?(char) ? word[i] = '*' : char }
+        end
+    end
+    words.join(" ")
+end
