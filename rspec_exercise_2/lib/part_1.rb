@@ -23,3 +23,10 @@ def censor(str, arr)
     end
     words.join(" ")
 end
+
+def power_of_two?(num)
+    if Math.sqrt(num) == Integer.sqrt(num)
+        true
+    else false
+    end
+end
