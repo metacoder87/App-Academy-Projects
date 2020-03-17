@@ -8,3 +8,7 @@ def partition(arr, num)
     parti << lil 
     parti << big
 end
+
+def merge(hash_1, hash_2)
+    hash_1.merge(hash_2)
+end
