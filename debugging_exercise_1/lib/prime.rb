@@ -5,14 +5,12 @@
 
 require "byebug"
 
-def prime(num)
+#prime(num) was missing the ?
+def prime?(num)
     return false if num < 2
-
-    (2...num).each do |factor|
-        if num % factor == 0
-            return false
-        else
-            return true
-        end
+    
+#the .each enumerable was getting stuck on 9 % 2 = 1 
+    (2...num).none? do |factor|
+        num % factor == 0
     end
 end
