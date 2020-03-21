@@ -10,8 +10,9 @@ $little_words = [ "and", "the", "over", "a", "on", "of" ]
 
 def titleize(title)
   words = title.split(" ")
-
+# |i, word| were in the wrong order
   titleized_words = words.map.with_index do |word, i|
+    #little_words variable was being called out of scope
     if i == 0 || !$little_words.include?(word)
       word.capitalize
     else
@@ -21,3 +22,4 @@ def titleize(title)
 
   titleized_words.join(" ")
 end
+
