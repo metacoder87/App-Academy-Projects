@@ -22,7 +22,7 @@ def num_vowels(word)
     count = 0
     word.each_char do |char|
         
-        # updated .includes? to .include
+        # updated .includes? to .include?
         count += 1 if "aeiou".include?(char)
     end
     count
