@@ -6,9 +6,15 @@
 require "byebug"
 
 def letter_count(string, char)
-    count = nil
-    string.each_char do |c| 
-        count += 1 if c = char 
+
+    #count was nil
+    count = 0
+
+    # wasn't working with strings that included caps
+    string.downcase.each_char do |c|
+         
+        # c = char needs to be the comparative c == char
+        count += 1 if c == char 
     end
     count
 end
