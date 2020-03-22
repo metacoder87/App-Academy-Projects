@@ -26,3 +26,13 @@ def dupe_indices(arr)
     arr.each { |ele| ndx(arr, ele).length > 1 ? hash[ele] = ndx(arr, ele) : nil }
     hash
 end
+
+def ana_array(arr_1, arr_2)
+    ele_counts(arr_1) == ele_counts(arr_2)
+end
+
+def ele_counts(arr)
+    hash = Hash.new()
+    arr.each { |ele| hash[ele] = arr.count(ele) }
+    hash
+end
