@@ -14,3 +14,15 @@ end
 def unique_chars?(str)
     str == str.split('').uniq.join('')
 end
+
+def ndx(arr, char)
+    ndxs = []
+    arr.each_with_index { |ele, i| ele == char ? ndxs << i : nil }
+    ndxs
+end
+
+def dupe_indices(arr)
+    hash = Hash.new()
+    arr.each { |ele| ndx(arr, ele).length > 1 ? hash[ele] = ndx(arr, ele) : nil }
+    hash
+end
