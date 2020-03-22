@@ -17,3 +17,7 @@ def aba_translate(word)
     arr = word.split("").map { |char| 'aeiou'.include?(char) ? char = char + 'b' + char : char }
     arr.join('')
 end
+
+def aba_array(arr)
+    arr.map { |word| aba_translate(word) }
+end
