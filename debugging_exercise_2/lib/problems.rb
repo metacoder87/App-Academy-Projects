@@ -10,3 +10,7 @@ def largest_prime_factor(num)
     divs = (2..num).select { |div| num % div == 0 && prime?(div) }
     divs.max
 end
+
+def unique_chars?(str)
+    str == str.split('').uniq.join('')
+end
