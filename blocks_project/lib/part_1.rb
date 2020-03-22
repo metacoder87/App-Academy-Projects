@@ -12,3 +12,8 @@ end
 def count_positive_subarrays(arr)
     arr.count { |brr| brr.inject(:+) > 0 } 
 end
+
+def aba_translate(word)
+    arr = word.split("").map { |char| 'aeiou'.include?(char) ? char = char + 'b' + char : char }
+    arr.join('')
+end
