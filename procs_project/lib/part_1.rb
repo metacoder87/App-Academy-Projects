@@ -22,3 +22,7 @@ end
 def my_all?(arr, &prc)
     !arr.map { |ele| prc.call(ele) }.include?(false)
 end
+
+def my_none?(arr, &prc)
+    my_count(arr) { |ele| prc.call(ele) } == 0
+end
