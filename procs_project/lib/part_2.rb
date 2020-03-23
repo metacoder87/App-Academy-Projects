@@ -22,3 +22,9 @@ end
 def and_selector(arr, prc_1, prc_2)
     arr.select { |ele| prc_1.call(ele) && prc_2.call(ele) }
 end
+
+def alternating_mapper(arr, prc_1, prc_2)
+    mapped = []
+    arr.each_index { |i| (i + 1).odd? ? mapped << prc_1.call(arr[i]) : mapped << prc_2.call(arr[i]) }
+    mapped
+end
