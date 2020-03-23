@@ -18,3 +18,7 @@ end
 def my_any?(arr, &prc)
     my_count(arr) { |ele| prc.call(ele) } > 0
 end
+
+def my_all?(arr, &prc)
+    !arr.map { |ele| prc.call(ele) }.include?(false)
+end
