@@ -10,3 +10,7 @@ end
 def my_select(arr, &prc)
     arr.keep_if { |ele| prc.call(ele) }
 end
+
+def my_count(arr, &prc)
+    my_select(arr) { |ele| prc.call(ele) }.length
+end
