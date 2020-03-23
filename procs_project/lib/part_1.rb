@@ -14,3 +14,7 @@ end
 def my_count(arr, &prc)
     my_select(arr) { |ele| prc.call(ele) }.length
 end
+
+def my_any?(arr, &prc)
+    my_count(arr) { |ele| prc.call(ele) } > 0
+end
