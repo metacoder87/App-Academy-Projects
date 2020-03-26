@@ -113,6 +113,12 @@ class String
     # "bootcamp".caesar_cipher(2) #=> "dqqvecor"
     # "zebra".caesar_cipher(4)    #=> "difve"
     def caesar_cipher(num)
-
+        alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+        sifed = self.chars.map do |char|
+            i = alphabet.index(char) 
+            new_alpha = alphabet.rotate(num)
+            char = new_alpha[i]
+        end
+        sifed.join('')
     end
 end
