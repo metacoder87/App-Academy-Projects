@@ -6,7 +6,30 @@
 #
 # all_vowel_pairs(["goat", "action", "tear", "impromptu", "tired", "europe"])   # => ["action europe", "tear impromptu"]
 def all_vowel_pairs(words)
+    word_pair = []
+    vowel_pairs = []
+    vowel_hsh = Hash.new()
+    words.map { |word| vowel_hsh[word] = vowels(word) }
+    
+    perms = vowel_hsh.values.combination(2).to_a
+    v_perms = perms.select { |pair| all_vowels?(pair) }
+    
+    v_perms.map do |pair| 
+        pair.each do |ele|
+            word_pair << vowel_hsh.key(ele)
+        end
+        vowel_pairs << word_pair.join(" ")
+        word_pair.clear
+    end
+    vowel_pairs
+end
 
+def all_vowels?(arr)
+    arr.inject(:+).split('').sort.uniq.join('') == 'aeiou'
+end
+
+def vowels(word)
+    word.split('').select { |char| 'aeiou'.include?(char) }.join('')
 end
 
 
