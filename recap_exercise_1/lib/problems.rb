@@ -41,7 +41,7 @@ end
 # composite?(9)     # => true
 # composite?(13)    # => false
 def composite?(num)
-
+    (2...num).any? { |fac| num % fac == 0 }
 end
 
 
