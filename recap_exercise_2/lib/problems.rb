@@ -1,8 +1,11 @@
 # Write a method, least_common_multiple, that takes in two numbers and returns the smallest number that is a mutiple
 # of both of the given numbers
 def least_common_multiple(num_1, num_2)
-
+    big_num = [num_1, num_2].max
+    mults = (big_num...100).select { |num| num % num_1 == 0 && num % num_2  == 0 ? num : nil}
+    mults[0]
 end
+
 
 
 # Write a method, most_frequent_bigram, that takes in a string and returns the two adjacent letters that appear the
