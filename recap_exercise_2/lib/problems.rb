@@ -49,6 +49,6 @@ class Array
     #
     # This should remind you of the spaceship operator! Convenient :)
     def bubble_sort(&prc)
-
+        self.sort! { |a, b| prc ? prc.call(a, b) : a <=> b }
     end
 end
