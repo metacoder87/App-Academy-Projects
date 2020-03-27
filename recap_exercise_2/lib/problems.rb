@@ -11,7 +11,11 @@ end
 # Write a method, most_frequent_bigram, that takes in a string and returns the two adjacent letters that appear the
 # most in the string.
 def most_frequent_bigram(str)
-
+    bigrams = []
+    bi_hash = Hash.new(0)
+    str[0...str.length].split('').each_index { |i| bigrams << str[i] + str[i + 1] if str[i+1] }
+    bigrams.map { |bigram| bi_hash[bigram] += 1 }
+    bi_hash.key(bi_hash.values.max)
 end
 
 
