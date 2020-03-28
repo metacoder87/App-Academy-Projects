@@ -72,3 +72,19 @@ describe "bi_prime?" do
         expect(bi_prime?(94)).to eq(true)
     end
 end
+
+describe "vigenere_cipher" do
+    it "should accept a string and a key-sequence as args" do
+        expect(vigenere_cipher("toerrishuman", [1])).to eq("upfssjtivnbo")
+    end
+
+    it "should return the encrypted message" do
+        expect(vigenere_cipher("toerrishuman", [1, 2])).to eq("uqftsktjvobp")
+        expect(vigenere_cipher("toerrishuman", [1, 2, 3])).to eq("uqhstltjxncq")
+    end
+
+    it "should return only lowercase alphabetic characters" do
+        expect(vigenere_cipher("zebra", [3, 0])).to eq("ceerd")
+        expect(vigenere_cipher("yawn", [5, 1])).to eq("dbbo")
+    end
+end
