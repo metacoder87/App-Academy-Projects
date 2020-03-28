@@ -36,3 +36,26 @@ describe "lucas_sequence" do
         lucas_sequence(3)
     end
 end
+
+describe "prime_factorization" do
+    it "should accept a number and returns an array representing the prime factorization of the given number" do
+        expect(prime_factorization(12)).to eq([2, 2, 3])
+        expect(prime_factorization(24)).to eq([2, 2, 2, 3])
+    end
+
+    it "should contain only prime numbers that multiply together to the given num" do
+        expect(prime_factorization(7)).to eq([7])
+        expect(prime_factorization(11)).to eq([11])
+        expect(prime_factorization(2017)).to eq([2017])
+    end
+
+    it "should contain numbers in ascending order" do
+        expect(prime_factorization(25)).to eq([5, 5])
+        expect(prime_factorization(60)).to eq([2, 2, 3, 5])
+    end
+
+    it "should be recursive" do
+        expect(self).to receive(:prime_factorization).at_least(:twice).and_call_original
+        prime_factorization(25)
+    end
+end
