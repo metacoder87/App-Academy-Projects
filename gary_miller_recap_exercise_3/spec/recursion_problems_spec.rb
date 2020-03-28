@@ -20,3 +20,19 @@ describe "multiply" do
         multiply(-3, 6)
     end
 end
+
+describe "lucas_sequence" do
+    it "should return an array containing the Lucas Sequence up to the given length" do
+        expect(lucas_sequence(0)).to eq([])
+        expect(lucas_sequence(1)).to eq([2])
+        expect(lucas_sequence(2)).to eq([2, 1])
+        expect(lucas_sequence(3)).to eq([2, 1, 3])
+        expect(lucas_sequence(6)).to eq([2, 1, 3, 4, 7, 11])
+        expect(lucas_sequence(8)).to eq([2, 1, 3, 4, 7, 11, 18, 29])
+    end
+
+    it "should be recursive" do
+        expect(self).to receive(:lucas_sequence).at_least(:twice).and_call_original
+        lucas_sequence(3)
+    end
+end
