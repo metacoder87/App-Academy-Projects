@@ -88,3 +88,19 @@ describe "vigenere_cipher" do
         expect(vigenere_cipher("yawn", [5, 1])).to eq("dbbo")
     end
 end
+
+describe "vowel_rotate" do
+    it "accepts a string as an arg" do
+        expect(vowel_rotate('computer')).to eq("cempotur")
+    end
+
+    it "should replace every vowel with the vowel before it in the original string" do
+        expect(vowel_rotate('oranges')).to eq("erongas")
+        expect(vowel_rotate('headphones')).to eq("heedphanos")
+    end
+
+    it "should replace the first vowel of the string with the last vowel" do
+        expect(vowel_rotate('awesome')).to eq("ewasemo")
+        expect(vowel_rotate('bootcamp')).to eq("baotcomp")
+    end
+end
