@@ -13,3 +13,30 @@ describe "String" do
         end
     end
 end
+
+describe "#map!" do
+    it "should define a String#map! method that accepts a block" do
+        word_1 = "Lovelace"
+        expect(word_1.map! do |ch| 
+                if ch == 'e'
+                    '3'
+                elsif ch == 'a'
+                    '4'
+                else
+                    ch
+                end
+            end).to eq("Lov3l4c3")
+    end
+
+    it "should modify the existing string" do
+        word_2 = "Dijkstra"
+        expect(word_2.map! do |ch, i|
+                if i.even?
+                    ch.upcase
+                else
+                    ch.downcase
+                end
+            end).to be("DiJkStRa")
+    end
+
+end
