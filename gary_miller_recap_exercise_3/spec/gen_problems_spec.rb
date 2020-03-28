@@ -13,3 +13,19 @@ describe "no_dupes?" do
         expect(no_dupes?([true, true, true])).to eq([])
     end
 end
+
+describe "no_consecutive_repeats?" do
+    it "should accept an array as an arg" do
+        expect(no_consecutive_repeats?(['x'])).to eq(true)
+    end
+
+    it "should return true if an element never appears consecutively in the array" do
+        expect(no_consecutive_repeats?(['cat', 'dog', 'mouse', 'dog'])).to eq(true)
+        expect(no_consecutive_repeats?([10, 42, 3, 7, 10, 3])).to eq(true)
+    end
+
+    it "should return false if an element appears consecutively in the array" do
+        expect(no_consecutive_repeats?([10, 42, 3, 3, 10, 3])).to eq(false)
+        expect(no_consecutive_repeats?(['cat', 'dog', 'dog', 'mouse'])).to eq(false)
+    end
+end
