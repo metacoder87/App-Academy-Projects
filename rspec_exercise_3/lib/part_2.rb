@@ -13,3 +13,7 @@ def char_replace!(string, hash)
     string.each_char.with_index { |char, i| hash.include?(char) ? string[i] = hash[char] : char }
     string
 end
+
+def product_inject(arr)
+    arr.inject(:*)
+end
