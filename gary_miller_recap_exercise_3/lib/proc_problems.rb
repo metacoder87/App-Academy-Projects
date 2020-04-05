@@ -11,7 +11,10 @@ class String
  # Do not use the built-in Array#select in your solution.
 
     def select(&prc)
-
+        if prc
+        self.split('').keep_if { |ele| prc.call(ele) }.join('')
+        else return ""
+        end
     end
 
  # Extend the string class by defining a String#map! method that accepts 
