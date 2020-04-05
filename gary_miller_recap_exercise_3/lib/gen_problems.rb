@@ -7,7 +7,10 @@
  # not repeated in the array.
 
 def no_dupes?(arr)
-
+    count = Hash.new(0)
+    arr.each { |ele| count[ele] += 1 }
+    no_dupes = count.select { |k, v| v == 1 }
+    no_dupes.keys
 end
 
  # Write a method no_consecutive_repeats?(arr) that accepts 
