@@ -103,5 +103,15 @@ end
  # of the string should be replaced with the last vowel.
 
 def vowel_rotate(str)
-
+    r_vowels = str.split('').select { |char| 'aeiou'.include?(char) }.rotate(-1)
+    i = 0 
+    rotated = []
+    str.split('').map do |char|
+        if 'aeiou'.include?(char)
+            rotated << r_vowels[i]
+            i += 1
+        else rotated << char
+        end
+    end
+    rotated.join('')
 end
