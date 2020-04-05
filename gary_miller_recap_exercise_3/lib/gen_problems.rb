@@ -60,7 +60,15 @@ end
  # 24 is not a bi-prime because no two prime numbers have a product of 24
 
 def bi_prime?(num)
-    
+   primes = (2..100).select { |i| prime?(i) }
+   dubs = primes.permutation(2).to_a
+   sqrs = primes.map { |i| i * i }
+   bi_primes = dubs.map { |dub| dub.inject(:*) }
+   return bi_primes.include?(num) || sqrs.include?(num)
+end
+
+def prime?(num)
+    (2...num).none? { |i| num % i == 0 }
 end
 
  # A Caesar cipher takes a word and encrypts it by offsetting each 
