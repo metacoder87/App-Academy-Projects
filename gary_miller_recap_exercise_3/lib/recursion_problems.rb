@@ -9,7 +9,11 @@
  # You must not use the multiplication (*) operator
 
 def multiply(a, b)
-
+    return 0 if a == 0
+    if a < 0
+        -(multiply((-a) - 1, b) + b)
+    else multiply(a - 1, b) + b
+    end
 end
 
  # The Lucas Sequence is a sequence of numbers. The first number of 
