@@ -87,7 +87,14 @@ end
  # that the message consists of only lowercase alphabetic characters.
 
 def vigenere_cipher(message, keys)
-
+    abc = 'abcdefghijklmnopqrstuvwxyz'.split('')
+    ciphed = []
+    cipher = message.split('').each_with_index do |char, idx|
+            num = keys[idx % keys.count]
+            new_alpha = abc.rotate(num)
+            ciphed << new_alpha[abc.index(char)]
+   end
+   ciphed.join('')
 end
 
  # Write a method vowel_rotate(str) that accepts a string as an arg and 
