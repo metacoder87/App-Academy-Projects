@@ -42,7 +42,10 @@ end
  # later in the string.
 
 def longest_streak(str)
-
+    indicies = char_indices(str).values.sort { |a,b| a.length <=> b.length }[-1]
+    char = char_indices(str).key(indicies) 
+    count = indicies.count
+    char * count
 end
 
  # Write a method bi_prime?(num) that accepts a number as an arg and 
