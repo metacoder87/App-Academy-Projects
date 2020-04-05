@@ -8,3 +8,8 @@ def element_count(arr)
     arr.each { |ele| hash[ele] += 1 }
     hash
 end
+
+def char_replace!(string, hash)
+    string.each_char.with_index { |char, i| hash.include?(char) ? string[i] = hash[char] : char }
+    string
+end
