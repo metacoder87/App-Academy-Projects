@@ -20,3 +20,8 @@ def nth_prime(num)
         else primes[num - 1]
     end
 end
+
+def prime_range(min, max)
+    return [] if min < 1
+    (min..max).select { |e| (2...e).none? { |i| e % i == 0 } }
+end
