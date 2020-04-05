@@ -27,7 +27,14 @@ end
  # the Lucas Sequence up to the given length. Solve this recursively.
 
 def lucas_sequence(length)
-
+    return [2, 1] if length == 2
+    return [2] if length == 1
+    return [] if length == 0
+    
+    arr = lucas_sequence(length - 1)
+    num = arr[- 1] + arr[- 2]
+    arr << num
+    arr
 end
 
  # The Fundamental Theorem of Arithmetic states that every positive 
