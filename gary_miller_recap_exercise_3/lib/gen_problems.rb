@@ -31,7 +31,9 @@ end
  # the indices where that character is found.
 
 def char_indices(str)
-
+    indys = Hash.new { |h, k| h[k] = [] }
+    str.chars.each_with_index { |char, i| indys[char] << i }
+    indys
 end
 
  # Write a method longest_streak(str) that accepts a string as an arg. 
