@@ -50,5 +50,11 @@ end
  # contain numbers in ascending order. Do this recursively.
 
 def prime_factorization(num)
-
+    (2...num).each do |fac|
+        if num % fac == 0
+            the_fac = num / fac
+            return [ *prime_factorization(fac), *prime_factorization(the_fac) ]
+        end
+    end
+    [ num ]
 end
