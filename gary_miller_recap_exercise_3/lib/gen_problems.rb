@@ -19,7 +19,10 @@ end
  # it should return false otherwise.
 
 def no_consecutive_repeats?(arr)
-
+    arr.each_index do |i| 
+       return false if arr[i] == arr[i + 1] 
+    end
+    true
 end
 
  # Write a method char_indices(str) that takes in a string as an arg. 
