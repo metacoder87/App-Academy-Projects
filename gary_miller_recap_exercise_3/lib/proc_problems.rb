@@ -23,8 +23,8 @@ class String
  # original character and it's index. Do not use the built-in Array#map 
  # or Array#map! in your solution.
 
-    def map(&prc)
-
+    def map!(&prc)
+        self.chars.collect!.with_index { |ele, i| prc.call(ele, i) }.join
     end
 
 end
