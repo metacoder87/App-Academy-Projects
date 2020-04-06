@@ -17,3 +17,7 @@ end
 def hash_select(hash, &prc)
     hash.keep_if { |key, val| prc.call(key, val) }
 end
+
+def xor_select(arr, proc1, proc2)
+    arr.select { |ele| (!proc1.call(ele) && proc2.call(ele)) || (proc1.call(ele) && !proc2.call(ele)) } 
+end
