@@ -14,3 +14,6 @@ def my_one?(arr, &prc)
     arr.map { |ele| prc.call(ele) }.count(true) == 1
 end
 
+def hash_select(hash, &prc)
+    hash.keep_if { |key, val| prc.call(key, val) }
+end
