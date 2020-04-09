@@ -13,3 +13,7 @@ def zip(*arr)
     else arrays[0].zip(arrays[1])
     end
 end
+
+def prizz_proc(arr, proc1, proc2)
+    arr.select { |ele| (proc1.call(ele) && !proc2.call(ele)) || (!proc1.call(ele) && proc2.call(ele)) }
+end
