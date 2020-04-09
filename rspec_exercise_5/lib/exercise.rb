@@ -46,3 +46,9 @@ def maximum(arr, &prc)
     else arr[results.rindex(results.max)]
     end
 end
+
+def my_group_by(arr, &prc)
+    hsh = Hash.new() { |h, k| h[k] = [] }
+    arr.each { |ele| hsh[prc.call(ele)] << ele }
+    hsh
+end
