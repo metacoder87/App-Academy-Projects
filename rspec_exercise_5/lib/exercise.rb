@@ -37,3 +37,12 @@ def zany_zip(*arr)
     arrays[0].zip(arrays[1], arrays[2], arrays[3])
     end
 end
+
+def maximum(arr, &prc)
+    results = []
+    arr.each { |ele| results << prc.call(ele) }
+    if results.empty?
+        return nil
+    else arr[results.rindex(results.max)]
+    end
+end
