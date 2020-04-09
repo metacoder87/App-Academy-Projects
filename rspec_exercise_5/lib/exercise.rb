@@ -70,3 +70,32 @@ def max_tie_breaker(arr, blk, &prc)
         return the_one[0]
     end
 end
+
+def silly_syllables(sentence)
+    words = []
+    sentence.split(' ').map do |word|
+        shaved = shave(word)
+        comp = shave(shaved.chars.reverse.join(''))
+        words << comp.reverse
+    end
+    words.join(' ')
+end
+
+def shave(word)
+    arr = []
+    vowels = 'aeiou'
+    pre_vowel = true
+
+    return word if word.count(vowels) < 2
+
+    word.split('').each do |char|
+        if vowels.include?(char)
+            arr << char
+            pre_vowel = false
+        elsif pre_vowel == false
+            arr << char 
+        else char
+        end
+    end
+    arr.join('')
+end
