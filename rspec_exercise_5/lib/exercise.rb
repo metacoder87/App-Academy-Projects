@@ -52,3 +52,21 @@ def my_group_by(arr, &prc)
     arr.each { |ele| hsh[prc.call(ele)] << ele }
     hsh
 end
+
+def max_tie_breaker(arr, blk, &prc)
+    winners = []
+    the_one = []
+
+    if arr.empty?
+        return nil
+    else p_sults = arr.map { |word| prc.call(word) }
+    p_sults.each_with_index { |num, i| num == p_sults.max ? winners << arr[i] : num }
+    end
+
+    if winners.count == 1
+        return winners[0]
+    else tie_breaker = winners.map { |word| blk.call(word) }
+    arr.each_with_index { |word, i| blk.call(word) == tie_breaker.max ? the_one << arr[i] : word }
+        return the_one[0]
+    end
+end
