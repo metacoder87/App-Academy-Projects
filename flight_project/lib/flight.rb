@@ -27,5 +27,11 @@ class Flight
             @passengers << passenger
         end
     end
+  
+    def list_passengers
+        list = []
+        passengers.each_index { |i| list << passengers[i].name }
+        list
+    end
 
 end
