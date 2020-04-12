@@ -33,5 +33,10 @@ class Flight
         passengers.each_index { |i| list << passengers[i].name }
         list
     end
+  
+    def [](index)
+        passengers[index]
+    end
+
 
 end
