@@ -19,5 +19,13 @@ class Flight
         end
         true
     end
+  
+    def board_passenger(passenger)
+        if full?
+            return "Sorry we're all booked up."
+        elsif passenger.has_flight?(@flight_number)
+            @passengers << passenger
+        end
+    end
 
 end
