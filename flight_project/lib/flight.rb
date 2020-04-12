@@ -12,5 +12,12 @@ class Flight
     def passengers
         @passengers
     end
+  
+    def full?
+        while @passengers.count < @capacity
+            return false
+        end
+        true
+    end
 
 end
