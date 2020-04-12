@@ -11,5 +11,12 @@ class Passenger
     def has_flight?(flight_number)
         @flight_numbers.include?(flight_number.upcase)
     end
+  
+    def add_flight(flight_number)
+      if has_flight?(flight_number)
+          puts 'Flight was previously scheduled.'
+      else @flight_numbers << flight_number.upcase
+      end
+    end
 
 end
